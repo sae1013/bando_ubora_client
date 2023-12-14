@@ -29,7 +29,9 @@ function Header() {
     <Container isTopBarDark={isTopBarDark}>
       <List>
         <img
-          src="/img/logo-on.jpeg"
+          src={
+            isTopBarDark ? "/img/logo_on_light.png" : "/img/logo_on_dark.png"
+          }
           style={{
             width: "141px",
             height: "52px",
@@ -57,10 +59,10 @@ function Header() {
               </NavLink>
             </Item>
           ))}
-          <div style={{display:'flex', alignItems:'center'}}>
-          <AiFillPhone style={{fontSize:'2rem',marginRight:'.5rem'}}/>
-          <span style = {{fontSize:'1.7rem', fontWeight:700}}>1688-6251</span>
-          </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <AiFillPhone style={{ fontSize: "2rem", marginRight: ".5rem" }} />
+          <span style={{ fontSize: "1.7rem", fontWeight: 700 }}>1688-6251</span>
+        </div>
       </List>
     </Container>
   );
