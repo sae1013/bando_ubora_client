@@ -19,6 +19,7 @@ function Banner() {
 
   const title = routes_map[pathname.slice(1)]
   
+  if(pathname == "/") return null
   return (
     <Wrapper>
       <Title>{title}</Title>

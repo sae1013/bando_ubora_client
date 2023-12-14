@@ -6,6 +6,9 @@ import About from "./about";
 // 단지 배치도
 import Danji from "./danji";
 
+// 배치도
+import Arrangement from "./arrangement";
+
 import Intro from "./intro";
 // 세대구조
 import Preview from "./preview";
@@ -18,4 +21,15 @@ import Supply from "./supply";
 
 // 상담접수
 import CustomerService from "./customer_service";
-export { App, About, Danji, Home, Intro, Preview, Subscription, Supply, CustomerService };
+export {
+  App,
+  About,
+  Danji,
+  Arrangement,
+  Home,
+  Intro,
+  Preview,
+  Subscription,
+  Supply,
+  CustomerService,
+};

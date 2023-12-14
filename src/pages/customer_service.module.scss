@@ -1,5 +1,6 @@
 .wrapper {
-  padding-top: 6rem;
+  padding-top: 2rem;
+  width: 80%;
 }
 .header {
   font-size: 2.5rem;
@@ -24,13 +25,11 @@
 
 .contents {
   display: flex;
-  height: 57vh;
   font-size: 1.5rem;
   font-weight: 600;
 
   .left {
     flex: 1;
-    height: 100%;
     background-color: #fafafa;
     padding-left: 3rem;
     p:nth-child(1) {
@@ -51,7 +50,7 @@
   .form {
     padding-left: 3rem;
     input {
-      display: block;
+      // display: block;
       margin-top: 3rem;
       max-width: 100%;
       min-width: 25%;
@@ -61,8 +60,8 @@
     }
 
     > textarea {
-      width: 50%;
-      height: 30rem;
+      width: 66%;
+      height: 13rem;
       margin-top: 4rem;
       padding: 2rem;
       border: 1px solid #a2a2a5;

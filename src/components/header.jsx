@@ -1,42 +1,90 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { getPathName } from "../utils/path";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { AiFillPhone } from "react-icons/ai";
+
+import { NavLink, useNavigate } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
 
 function Header() {
+  const [isTopBarDark, setIsTopBarDark] = useState(false);
+  const navigate = useNavigate();
+  const handleTopBarTransition = useCallback(() => {
+    if (window.scrollY > 90) {
+      setIsTopBarDark(true);
+    } else {
+      setIsTopBarDark(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleTopBarTransition, {
+      passive: true,
+    });
+    return () => {
+      window.removeEventListener("scroll", handleTopBarTransition);
+    };
+  });
+
   return (
-    <Container>
+    <Container isTopBarDark={isTopBarDark}>
       <List>
+        <img
+          src="/img/logo-on.jpeg"
+          style={{
+            width: "141px",
+            height: "52px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            return navigate("/");
+          }}
+        ></img>
         {routes
           .filter((ele) => ele.vis)
           .map((route, index) => (
             <Item key={index}>
               <NavLink
                 to={`/${route.path}`}
-                style={({ isActive }) => (isActive ? activeStyle : {})}
+                style={({ isActive }) =>
+                  isActive
+                    ? isTopBarDark
+                      ? darkActiveStyle
+                      : lightActiveStyle
+                    : {}
+                }
               >
                 <Title>{route.name}</Title>
               </NavLink>
             </Item>
           ))}
+          <div style={{display:'flex', alignItems:'center'}}>
+          <AiFillPhone style={{fontSize:'2rem',marginRight:'.5rem'}}/>
+          <span style = {{fontSize:'1.7rem', fontWeight:700}}>1688-6251</span>
+          </div>
       </List>
     </Container>
   );
 }
 
 const Container = styled.div`
-  /* background-color: #f9f9f9; */
+  background-color: ${(props) => (props.isTopBarDark ? "#02104D" : "#f9f9f9")};
+  color: ${(props) => (props.isTopBarDark ? "#fff" : "#212121")};
   position: sticky;
+  z-index: 999;
   width: 100%;
   height: 7rem;
+  font-size: 1.6rem;
   top: 0;
-  padding: 3rem 0 ;
+  padding: 3rem 0;
   border-bottom: 1px solid #f9f9f9;
-  /* padding-top: 2rem; */
-  /* top: -1rem; */
-  /* border: 1px solid black ; */
+  transition: background-color 0.2s;
+
+  span {
+    &:hover {
+      color: ${(props) => (props.isTopBarDark ? "#fff" : "#3057a6")};
+      transition: color 0.2s ease;
+    }
+  }
 `;
 
 const List = styled.ul`
@@ -50,29 +98,27 @@ const List = styled.ul`
   height: 100%;
 `;
 
-const activeStyle = {
-  color: "#3057a6",
+const darkActiveStyle = {
+  color: "#fff",
   fontWeight: 700,
+  fontSize: "1.8rem",
+  transition: "font-size 0.2s",
 };
 
+const lightActiveStyle = {
+  color: "#3057a6",
+  fontWeight: 700,
+  fontSize: "1.8rem",
+  transition: "font-size 0.2s",
+};
 const Item = styled.li`
   padding: 2rem;
-  color:#212121;
-  /* &:hover {
-    background-color: #272154;
-    transition: background-color 0.3s ease;
-  } */
-  span {
-    &:hover {
-      color: #3057a6;
-      transition: color 0.2s ease;
-    }
-  }
+  color: inherit;
 `;
 
 const Title = styled.span`
   color: inherit;
-  font-size: 2rem;
+  font-size: inherit;
 `;
 
 export default Header;
