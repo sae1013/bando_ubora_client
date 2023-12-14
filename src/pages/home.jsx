@@ -16,13 +16,16 @@ function Home() {
           <ImageBox src={"/img/main_viz_4.png"}></ImageBox>
         </section>
         <section>
+          <ImageBox src={"/img/main_viz_11.png"}></ImageBox>
+        </section>
+        <section>
           <ImageBox src={"/img/main_viz_5.png"}></ImageBox>
         </section>
         <section>
           <ImageBox src={"/img/main_viz_3.png"}></ImageBox>
         </section>
         <section>
-          <ImageBox src={"/img/main_viz_1.png"}></ImageBox>
+          <ImageBox src={"/img/main_viz_10.png"}></ImageBox>
         </section>
       </PageWrapper>
     </>
