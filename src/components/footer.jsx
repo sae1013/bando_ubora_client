@@ -10,10 +10,12 @@ function Footer() {
         <div>
           <img src="/img/footer_img1.png"></img>
         </div>
+        <p style={{textAlign:'center'}}>담당자: 홍성란</p>
       </Left>
       <Right>
         <span>분양문의</span>
         <p>1688-6251</p>
+        
       </Right>
     </Container>
   );
