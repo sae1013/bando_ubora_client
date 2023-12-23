@@ -12,7 +12,7 @@ function CustomerService() {
 
   const onSubmit = async (inputForm) => {
     const { name, phoneNumber, description } = inputForm;
-    const result = await axiosRequest("/cs/register", {
+    const result = await axiosRequest("/cs", {
       name,
       phoneNumber,
       description,

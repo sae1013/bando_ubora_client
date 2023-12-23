@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://port-0-bando-ubora-server-2cev92alq5bjutb.sel4.cloudtype.app",
-  timeout: 4000,
+  baseURL:
+    "https://gmhnc2vklb.execute-api.ap-northeast-2.amazonaws.com/ver1",
+  timeout: 20000,
   headers: {
     "Content-Type": "application/json",
   },
@@ -10,7 +11,7 @@ const instance = axios.create({
 
 const axiosRequest = async (endpoint, params) => {
   try {
-    const response = await instance.post(endpoint,params);
+    const response = await instance.post(endpoint, params);
     return response.data;
   } catch (error) {
     console.error("Axios Error", error);
@@ -18,6 +19,4 @@ const axiosRequest = async (endpoint, params) => {
   }
 };
 
-export {
-  axiosRequest,
-};
+export { axiosRequest };
