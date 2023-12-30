@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 function Banner() {
   const location = useLocation();
   const { pathname } = location;
-  
+
   const routes_map = routes.reduce((table, route) => {
     const { name, path, vis } = route;
     if (!vis || path == "") {
@@ -17,9 +17,9 @@ function Banner() {
     return table;
   }, {});
 
-  const title = routes_map[pathname.slice(1)]
-  
-  if(pathname == "/") return null
+  const title = routes_map[pathname.slice(1)];
+
+  if (pathname == "/") return null;
   return (
     <Wrapper>
       <Title>{title}</Title>
