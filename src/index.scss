@@ -22,12 +22,10 @@ body {
   font-family: sans-serif, "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 1024px;
+  min-width: 360px;
+  
 }
 
-.main {
-  padding: 1rem 2rem;
-}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

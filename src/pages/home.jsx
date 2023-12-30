@@ -7,9 +7,9 @@ function Home() {
   return (
     <>
       <Container>
-        <section>
+        {/* <section>
           <video autoPlay loop muted src="/videos/brand_video.mp4"></video>
-        </section>
+        </section> */}
       </Container>
       <PageWrapper>
         <section>
