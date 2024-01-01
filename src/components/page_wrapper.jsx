@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-function PageWrapper({ children }) {
-  return <Container>{children}</Container>;
-}
+const PageWrapper = React.forwardRef((props, ref) => {
+  return <Container ref={ref}>{props.children}</Container>;
+});
 
 const Container = styled.div`
   max-width: 1360px;
@@ -12,6 +12,5 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     padding: 1rem;
   }
-  
 `;
 export default PageWrapper;
