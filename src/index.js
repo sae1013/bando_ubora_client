@@ -7,6 +7,7 @@ import { router } from "./routes";
 import "./index.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+window.Kakao.init(process.env.REACT_APP_KAKAO_JAVASCRIPT_APP_KEY);
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
