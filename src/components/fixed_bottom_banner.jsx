@@ -5,7 +5,7 @@ function FixedBottomBanner() {
   
   return (
     <Container
-      href="tel:+8216886251"
+      href="tel:16886251"
       style={{
         width: "100%",
         height: "6rem",
